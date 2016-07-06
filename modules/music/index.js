@@ -168,6 +168,7 @@ var Player = function (_Audio) {
 			className: '',
 			count: 0
 		};
+		_this.videoplay = false;
 		_this.init();
 		return _this;
 	}
@@ -283,6 +284,26 @@ var Player = function (_Audio) {
 			this.btn.setSrc.onchange = function () {
 				_this3.setSrc(_this3.btn.setVolume.value);
 			};
+			this.video.onloadstart = function () {
+				if (_this3.videoplay) {
+					list.tips('视频加载中...');
+				}
+			};
+			this.video.onwaiting = function () {
+				if (_this3.videoplay) {
+					list.tips('视频缓冲中...');
+				}
+			};
+			this.video.oncanplay = function () {
+				if (_this3.videoplay) {
+					list.tips('开始播放');
+				}
+			};
+			this.video.onerror = function () {
+				if (_this3.videoplay) {
+					list.tips('加载失败');
+				}
+			};
 		}
 	}]);
 
@@ -340,16 +361,19 @@ var Search = function () {
 					if (!tParent.classList.contains('no')) {
 						var data = loadData[id];
 						player.resetPlay();
-						player.setInfo(data.song_name + '-' + data.singer_name);
+						player.setInfo((data.song_name || '') + '-' + (data.singer_name || ''));
 						if (!className.contains('mv')) {
+							player.videoplay = false;
 							player.setSrc(!className.contains('sq') ? data.url_list[data.url_list.length - 1].url : data.ll_list[0].url);
-							_this4.searchLrc(id, data.song_name, data.singer_name);
+							_this4.searchLrc(id, data.song_name || '', data.singer_name || '');
 							_this4.video.src = '';
 							player.audio.play();
 						} else {
 							list.showBox('mv');
+							player.videoplay = true;
 							player.audio.pause();
 							_this4.video.src = data.mv_list[data.mv_list.length - 1].url;
+							_this4.video.poster = data.mv_list[data.mv_list.length - 1].picUrl;
 							_this4.video.play();
 						}
 					}
@@ -428,7 +452,7 @@ var Search = function () {
 				    album_name = !x.album_name ? '' : '<i>' + x.album_name + '</i>';
 				var c = ('<li data-id=\'' + x.song_id + '\' class=\'' + no + hasSQ + hasMV + '\'>\n\t\t\t<span class=\'song\'>' + x.song_name + '</span>\n\t\t\t<span class=\'info\'>' + (singer_name + album_name) + '</span>\n\t\t\t<span class=\'sq\'>SQ</span>\n\t\t\t<span class=\'mv\'>MV</span>\n\t\t\t</li>').trim();
 				return c;
-			});
+			}).join('');
 			if (!add) {
 				this.list.innerHTML = code;
 			} else {

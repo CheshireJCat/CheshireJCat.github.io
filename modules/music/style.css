@@ -17,9 +17,6 @@ ul,ol,li{list-style:none;}
 .fr{float:right;}
 .hide{display: none;}
 body{background-image:url(http://ww2.sinaimg.cn/large/ba92d609jw1f2n7ol2sfaj215o0u51kz.jpg);background-size:100% auto ;font-family:微软雅黑;background-attachment:fixed;background-position: 50% 20%;overflow:hidden;min-width: 860px;}
-@media(max-width:1023px){
-	body{background-size:auto 100%;background-position: 50% 0;}
-}
 /*搜索结果列表*/
 #list{position:absolute;width:25%;top:0;bottom:60px;right:0;overflow-x:hidden;overflow-y:auto;transition:all 0.8s;}
 #tips{position:absolute;width:25%;top:0;bottom:60px;right:0;z-index: -1;line-height:60px;font-size:30px;opacity:0;text-align:center;background-color:rgba(0,0,0,0.5);color:#fff;transition:all 0.3s ease-out;}
@@ -124,3 +121,20 @@ input[type=range]:focus::-webkit-slider-runnable-track{background:#70EFEF;}
 /*滚动条*/
 ::-webkit-scrollbar{background-color:#ddd;border-radius:5px;width:8px;height:8px;}
 ::-webkit-scrollbar-thumb{background-color:#aaa;border-radius:5px;width:8px;height:8px;}
+
+@media(max-width:1023px){
+	body{background-size:auto 100%;background-position: 50% 0;}
+}
+@media(max-width:667px){
+	.title{right: 0;}
+	.left{right: 0;bottom: 50%;}
+	#list{width: 100%;top: 50%;}
+	#tips{width: 100%;top: 50%;}
+	#loading{width: 100%;}
+	#list li{width: 100%;}
+	#list .song{width: auto;right: 50px;}
+	#list .info{width: auto;left:50px;}
+	#volume,#play-time{display: none;}
+	.play-songName{position: static;text-align: center;}
+	#video{width: 100%;}
+}

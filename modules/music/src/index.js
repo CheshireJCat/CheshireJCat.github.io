@@ -101,6 +101,7 @@ class Player extends Audio {
 			className:'',
 			count:0,
 		};
+		this.videoplay = false;
 		this.init();
 	}
 	init(){
@@ -182,6 +183,18 @@ class Player extends Audio {
 		this.btn.setSrc.onchange = ()=>{
 			this.setSrc(this.btn.setVolume.value);
 		};
+		this.video.onloadstart = ()=>{
+			if(this.videoplay){list.tips('视频加载中...');}
+		}
+		this.video.onwaiting = ()=>{
+			if(this.videoplay){list.tips('视频缓冲中...');}
+		}
+		this.video.oncanplay = ()=>{
+			if(this.videoplay){list.tips('开始播放');}
+		}
+		this.video.onerror = ()=>{
+			if(this.videoplay){list.tips('加载失败');}
+		}
 	}
 }
 const player = new Player();
@@ -225,16 +238,19 @@ class Search {
 				if(!tParent.classList.contains('no')){
 					let data = loadData[id];
 					player.resetPlay();
-					player.setInfo(`${data.song_name}-${data.singer_name}`);
+					player.setInfo(`${data.song_name||''}-${data.singer_name||''}`);
 					if(!className.contains('mv')){
+						player.videoplay = false;
 						player.setSrc(!className.contains('sq')?data.url_list[data.url_list.length-1].url:data.ll_list[0].url);
-						this.searchLrc(id,data.song_name,data.singer_name);
+						this.searchLrc(id,data.song_name||'',data.singer_name||'');
 						this.video.src = '';
 						player.audio.play();
 					}else{
 						list.showBox('mv');
+						player.videoplay = true;
 						player.audio.pause();
 						this.video.src = data.mv_list[data.mv_list.length-1].url;
+						this.video.poster = data.mv_list[data.mv_list.length-1].picUrl;
 						this.video.play();
 					}
 				}
@@ -308,7 +324,7 @@ class Search {
 			<span class='mv'>MV</span>
 			</li>`.trim();
 			return c;
-		});
+		}).join('');
 		if(!add){
 			this.list.innerHTML = code;
 		}else{
