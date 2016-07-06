@@ -11,32 +11,33 @@
 	<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-	<audio autoplay src=""></audio>
+	<!-- <audio autoplay src=""></audio> -->
 	<!-- 播放器控制 -->
 	<ul id="list"></ul>
 	<div id="tips">提示信息</div>
 	<ul class="player">
-		<li class="prev fl"><i class="fa fa-backward fa-large"></i></li>
-		<li class="play active fl"><i class="fa fa-play fa-2x"></i><i class="fa fa-pause fa-2x"></i></li>
-		<li class="next fl"><i class="fa fa-forward fa-large"></i></li>
-		<li class="play-songName">御龙吟-姚贝娜</li>
-		<li class="play-duration"><span class="play-load"></span><span class="play-pro"><span></span></span></li>
-		<li class="fr"><input class="setVolume" type="range" step="0.01" min="0" max="1" placeHolder="setVolume" value="1"><input class="volumeValue" type="text" placeHolder="now volume" hidden></li>
-		<li class="volume fr" data-volume="2"><i class="fa-volume-off volumeOff fa fa-large"></i><i class="volumeDown fa fa-volume-down fa-large"></i><i class="volumeUp fa fa-volume-up fa-large"></i></li>
-		<li class="play-time fr">00:00 / 00:00</li>
+		<li id="prev" class="prev fl hide"><i class="fa fa-backward fa-large"></i></li>
+		<li id="play" class="play active fl"><i class="fa fa-play fa-2x"></i><i class="fa fa-pause fa-2x"></i></li>
+		<li id="next" class="next fl hide"><i class="fa fa-forward fa-large"></i></li>
+		<li id="play-songName" class="play-songName"></li>
+		<li id="play-duration" class="play-duration"><span id="play-load" class="play-load"></span><span id="play-pro" class="play-pro"><span></span></span></li>
+		<li class="fr"><input id="setVolume" class="setVolume" type="range" step="0.01" min="0" max="1" placeHolder="setVolume" value="1"><input id="volumeValue" class="volumeValue" type="text" placeHolder="now volume" hidden></li>
+		<li id="volume" class="volume fr" data-volume="2"><i class="fa-volume-off volumeOff fa fa-large"></i><i class="volumeDown fa fa-volume-down fa-large"></i><i class="volumeUp fa fa-volume-up fa-large"></i></li>
+		<li id="play-time" class="play-time fr">00:00 / 00:00</li>
 	</ul>
 	<input id="setSrc" type="text" placeHolder="setSrc" hidden>
 	<ul class="title">
-		<li class="fl panelBtn listPub" data-type="pub">榜单</li>
+		<li class="fl panelBtn listPub hide" data-type="pub">榜单</li>
 		<li class="fl panelBtn listClass" data-type="class">分类</li>
-		<li class="fl panelBtn listSinger" data-type="singer">歌手</li>
+		<li class="fl panelBtn listSinger hide" data-type="singer">歌手</li>
+		<li class="fl panelBtn listMv" data-type="mv">MV</li>
 		<li class="fl panelBtn listPub" data-type="lrc">歌词</li>
 		<li class="fr" data-type="lrc"><a href="/" style="color:#fff">首页</a></li>
-		<li class="showSearch fr"><i class="fa fa-search fa-2x"></i></li>
+		<li id="showSearch" class="showSearch fr"><i class="fa fa-search fa-2x"></i></li>
 	</ul>
 	<div class="left">
 		<div class="box">
-			<div class="lrcBox panel active"><div class="lrcMove"><div class="lrcBottom"></div><div class="lrc"></div></div></div>
+			<div class="lrcBox panel active"><div class="lrcMove" id="lrcMove"><div class="lrcBottom" id="lrcBottom"></div><div class="lrc" id="lrc"></div></div></div>
 			<div class="pubBox panel">
 				<ul class="box1"></ul>
 				<ul class="box2"></ul>
@@ -52,12 +53,11 @@
 				<ul class="box2"></ul>
 				<div class="to-status1"><i class="fa fa-reply fa-large"></i></div>
 			</div>
+			<div class="panel mvBox" id="mvBox"><video id="video" controls height="100%"></video></div>
 		</div>
-		<div class="searchBox"><input type="text" id="search" value="记得"><span id="searchSub"><i class="fa fa-search fa-3x"></i></span></div>
+		<div id="searchBox" class="searchBox"><input type="text" id="search" value="记得"><span id="searchSub"><i class="fa fa-search fa-3x"></i></span></div>
 	</div>
 	<div id="loading"><span>loading...</span></div>
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/underscore.js/1.7.0/underscore-min.js"></script>
-	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="index.min.js"></script>
 </body>
 </html>
