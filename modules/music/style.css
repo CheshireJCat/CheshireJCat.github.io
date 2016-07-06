@@ -105,7 +105,7 @@ li.next{}
 .title li:hover{background-color:rgba(0,0,0,1);}
 
 /*搜索按钮*/
-.searchBox{position:absolute;top:-50%;height:80px;width:60%;left:20%;opacity:0;transition:all 0.5s ease-out;}
+.searchBox{position:absolute;top:-100%;height:80px;width:60%;left:20%;opacity:0;transition:all 0.5s ease-out;}
 .searchBox.active{top:50%;opacity:1;}
 .searchBox input{position:absolute;width:100%;font-size:25px;text-indent:10px;display:block;height:100%;background-color:rgba(255,255,255,0.8);}
 .searchBox span{display:block;position:absolute;top:0;right:0;width:80px;height:80px;text-align:center;line-height:100px;cursor:pointer;color:#fff;background-color:rgba(74,74,74,0.7);}
