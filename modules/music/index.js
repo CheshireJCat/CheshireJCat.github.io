@@ -86,7 +86,7 @@ var Audio = function () {
 		_classCallCheck(this, Audio);
 
 		this.audio = document.createElement('audio');
-		this.audio.src = '1.mp3';
+		this.audio.src = '';
 		this.audio.autoplay = true;
 		this.audio.loop = true;
 		document.body.appendChild(this.audio);

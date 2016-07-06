@@ -45,7 +45,7 @@ const jsonp = (url, option) => {
 class Audio {
 	constructor() {
 		this.audio = document.createElement('audio');
-		this.audio.src = '1.mp3';
+		this.audio.src = '';
 		this.audio.autoplay = true;
 		this.audio.loop = true;
 		document.body.appendChild(this.audio);
