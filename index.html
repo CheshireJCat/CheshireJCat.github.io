@@ -2,44 +2,102 @@
 <html lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8">
-	<link rel="dns-prefetch" href="/modules/music/index.html">
-	<link rel="prerender" href="/modules/music/index.html">
+	<link rel="dns-prefetch" href="music/index.html">
+	<link rel="prerender" href="music/index.html">
 	<link rel="shortcut icon" href="/favicon.gif">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta content="always" name="referrer">
 	<meta http-equiv="x-dns-prefetch-control" content="on" />
-	<title>lmaomaoz</title>
-	<style>
-		body{margin: 0;color:#fff;background-color: #000;}
-		.title{font-size: 4em;padding:0.5em 0;margin:0 10%;border-bottom: 1px solid #fff;}
-		.content{margin:0 10%;}
-		p{font-size: 1.5em;line-height:1.5;}
-		dl{font-size: 1.2em;line-height:1.5;margin-top: 4em;}
-		video{position: fixed;z-index:-1;height: 100%;right: 0;}
-		a{color:pink;}
+	<title>柴郡猫的个人主页</title>
+	<style type="text/css">
+		body{font-family: arial, sans-serif;background-color: #fff;transition:1s;}
+		.title{position: fixed;bottom: 0;left: 0;text-align: center;width: 100%;color:#454545;}
+		.nav{overflow:hidden;position: fixed;bottom: 0;left: 0;height: 420px;width: 100%;}
+		.navs{width: 800px;height: 840px;margin:0 auto;transform-origin:50% 50%;transition: 1s;transform:rotate(0deg);}
+		.rotate{animation: rotate1 20s linear infinite;}
+		.navs li{position: absolute;left: 50%;top: 20px;margin-left: -50px;width: 100px;height: 100px;line-height:100px;transform-origin:50% 400px;text-align: center;
+				border-radius:5px;transition:border-radius .3s,box-shadow 1s;
+				box-shadow:0 0px 10px 0 rgba(0, 0, 0, 0.12);
+		}
+		.navs li:hover{border-radius:50%;z-index: 1;}
+		.navs li a:hover{transform:scale(1.1);}
+		.navs li a{text-decoration: none;color:#fff;font-family:Microsoft YaHei;font-size: 20px;display:inline-block;width: 100%;height: 100%;}
+		ul,li{margin: 0;padding: 0;list-style:none;}
+		@keyframes rotate1{
+			0%{
+				transform:rotate(0deg);
+			}
+			50%{
+				transform:rotate(180deg);
+			}
+			100%{
+				transform:rotate(360deg);
+			}
+		}
 	</style>
 </head>
 <body>
-	<video autoplay loop src="http://o7ze2s1ph.bkt.clouddn.com/medias/videos/1.webm"></video>
-	<header>
-			<h1 class="title">Lmaomaoz's First Website!</h1>
-	</header>
-	<div class="content">
-		<article>
-			<h1>Welcome to my site, my friends!</h1>
-			<p>As you see, there is nothing here.
-				<br>I will build it width my free time later. 
-				<br>Up to now, I only plan to build blog, music and code moudles, if you have some idea....ummm
-				<br>Of course, it should have comment and message system.
-				<br>So, the email is <em>lmaomaoz@gmail.com</em>, I believe you have your trick.
-			</p>
-		</article>
-		<dl>
-			<dt>logs:</dt>
-			<dd><a href="modules/music/index.html">Music</a> had been deploy. Just try it.</dd>
-			<dd><a href="/blog/">blog</a></dd>
-		</dl>
+	<div class="nav" id="nav">
+		<ul class="navs" id="navs">
+			
+		</ul>
 	</div>
-	<script type="text/javascript" src="//hm.baidu.com/hm.js?8170fc2f69a74ae7cc3a665158dfdf4a"></script>
+	<h1 class="title">柴郡猫的个人主页</h1>
+	<script type="text/javascript">
+	(function(){
+		function gc(){
+			return '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).substr(-6);
+		}
+		var data = [['首页','/','#ddd'],['音乐','/music','#ffcdd2'],['博客','/blog','#0eb3af'],['实验室','/lab','#40c4ff'],['code','/code','#ee6e73'],['关于','/about','#bfafa0']];
+		var max = 12;
+		if(data.length<max){data = data.concat(data);}
+		var mode = '<li style="background:{{background}};transform:rotate({{rotate}}deg)" data-index={{index}}><a href="{{href}}">{{word}}</a></li>',
+			count = data.length,
+			angle = 360/count,
+			navs = document.getElementById('navs');
+			navs.innerHTML = data.concat().map(function(x,i) {
+				return mode.replace(/{{href}}/g,x[1])
+						   .replace(/{{word}}/g,x[0])
+						   .replace(/{{background}}/g,x[2])
+						   .replace(/{{rotate}}/g,angle*i)
+						   .replace(/{{index}}/g,i);
+			}).join('');
+		var t = new Date();
+		var nowData = 0;
+		var nowAngle = 0;
+		function scrollFun(event){	
+			var t2 = new Date();
+			if(t2-t<600){
+				return false;
+			}else{
+				t = t2;
+			}
+			var e = event||window.event;
+			var delta = arguments.length>0?(e.wheelDelta||-e.detail):1;
+			var d = delta>0?1:-1;
+			//var nowAngle = navs.style.transform.match(/rotate\((-?\d+)deg\)/);
+			//nowAngle = nowAngle==null?0:nowAngle[1]*1;
+			//nowAngle += angle*d;
+			nowData += -d;
+			nowData = nowData>max-1?nowData%max:nowData<0?nowData+max:nowData;
+			nowAngle += angle*d;
+			navs.style.transform = 'rotate('+nowAngle+'deg)';
+			document.getElementsByTagName('body')[0].style.background = data[nowData][2];
+		}
+		var it = setInterval(scrollFun,2000);
+		navs.onmouseenter = function(){
+			//navs.classList.remove('rotate');
+			clearInterval(it);
+		};
+		navs.onmouseleave = function(){
+			//navs.classList.add('rotate');
+			it = setInterval(scrollFun,2000);
+		};
+		if(document.addEventListener){
+		    document.addEventListener('DOMMouseScroll',scrollFun,false);
+		}//W3C
+		window.onmousewheel=document.onmousewheel=scrollFun;//IE/Opera/Chrome
+	})();
+	</script>
 </body>
 </html>
