@@ -64,7 +64,7 @@
 		function gc(){
 			return '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).substr(-6);
 		}
-		var data = [['首页','/','#ddd'],['音乐','/music','#ffcdd2'],['博客','/blog','#0eb3af'],['实验室','/lab','#40c4ff'],['code','/code','#ee6e73'],['关于','/about','#bfafa0']];
+		var data = [['首页','/','#ddd'],['音乐','/music','#ffcdd2'],['博客','/blog2','#0eb3af'],['实验室','/lab','#40c4ff'],['code','/code','#ee6e73'],['关于','/about','#bfafa0']];
 		var max = 12;
 		if(data.length<max){data = data.concat(data);}
 		var mode = '<li style="background:{{background}};transform:rotate({{rotate}}deg)" data-index={{index}}><a href="{{href}}">{{word}}</a></li>',
