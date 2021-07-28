@@ -2,6 +2,7 @@ import remark from "remark";
 import html from "remark-html";
 import highlight from "remark-highlight.js";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 async function trankMd(content: string) {
   const processedContent = await remark()
@@ -13,7 +14,7 @@ async function trankMd(content: string) {
 
 const Markdown: React.FC<{
   content: string;
-}> = ({ content }) => {
+}> = ({ content,children }) => {
   const [res, setRes] = useState(content);
   useEffect(() => {
     async function run() {
@@ -29,7 +30,12 @@ const Markdown: React.FC<{
     }
     run();
   }, [content]);
-  return <div dangerouslySetInnerHTML={{ __html: res || "" }} />;
+  return <Ctn dangerouslySetInnerHTML={{ __html: res || "" }} />;
 };
+
+const Ctn = styled.div`
+  max-width: 1000px;
+  margin: 20px auto;
+`
 
 export default Markdown;

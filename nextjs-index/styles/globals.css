@@ -1,4 +1,4 @@
-:root{
+:root {
   --mainColor: #5c9922;
 }
 
@@ -76,7 +76,6 @@ pre {
 }
 
 code {
-  display: block;
   font-family: Consolas, Monaco, monospace;
   font-size: 10pt;
   overflow-x: auto;
@@ -84,6 +83,7 @@ code {
   scrollbar-width: thin;
   -moz-tab-size: 4;
   tab-size: 4;
+  color: var(--mainColor);
 }
 
 pre code.hljs {
