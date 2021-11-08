@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<link rel="dns-prefetch" href="/music">
+	<link rel="dns-prefetch" href="/blog">
+	<link rel="dns-prefetch" href="/lab">
+	<link rel="dns-prefetch" href="/code">
+	<link rel="prerender" href="/music/index.html">
+	<link rel="shortcut icon" href="/favicon.gif">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta content="always" name="referrer">
+	<meta http-equiv="x-dns-prefetch-control" content="on" />
+	<title>柴郡猫的个人主页</title>
+	<script data-ad-client="ca-pub-5666360149876628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<style type="text/css">
+		body{font-family: arial, sans-serif;background-color: #ddd;transition:1s;}
+		.title{position: fixed;bottom: 50px;left: 0;text-align: center;width: 100%;color:#454545;}
+		.nav{overflow:hidden;position: fixed;bottom: 0;left: 0;height: 420px;width: 100%;}
+		.navs{width: 800px;height: 840px;margin:0 auto;transform-origin:50% 50%;transition: 1s;transform:rotate(0deg);z-index: 0;}
+		.rotate{animation: rotate1 20s linear infinite;}
+		.navs li{position: absolute;left: 50%;top: 20px;margin-left: -50px;width: 100px;height: 100px;line-height:100px;transform-origin:50% 400px;text-align: center;
+				border-radius:5px;transition:border-radius .3s,box-shadow 1s;
+				box-shadow:0 0px 10px 0 rgba(0, 0, 0, 0.12);
+		}
+		.navs li:hover{border-radius:50%;z-index: 1;}
+		.navs li a:hover{transform:scale(1.1);}
+		.navs li a{text-decoration: none;color:#fff;font-family:Microsoft YaHei;font-size: 20px;display:inline-block;width: 100%;height: 100%;}
+		ul,li{margin: 0;padding: 0;list-style:none;}
+		.footer{position: fixed;bottom: 0;left: 0;text-align: center;width: 100%;font-size: 12px;color: #666;padding:10px 0;}
+		.footer a{text-decoration: none;color: currentColor;margin-right: 50px;}
+		@keyframes rotate1{
+			0%{
+				transform:rotate(0deg);
+			}
+			50%{
+				transform:rotate(180deg);
+			}
+			100%{
+				transform:rotate(360deg);
+			}
+		}
+		.resumes{text-align: center;margin-top: 50px;position: relative;z-index: 1;line-height:40px;}
+		.resumes a{padding:5px 10px;background-color: #fff;text-decoration: none;color:#454545;font-family: microsoft YaHei;}
+		.octicon{vertical-align:middle;vertical-align:text-bottom;padding-right: 5px;width: 22px;height: 22px;}
+	</style>
+</head>
+<body>
+	<div class="nav" id="nav" style="display:none">
+		<ul class="navs" id="navs"</ul>
+	</div>
+	<h1 class="title">柴郡猫的小窝</h1>
+	<div style="
+	    font-family: 微软雅黑;
+	    font-weight: bold;
+	    color: #fff;
+	    font-size: 60px;
+	    text-align: center;
+		    width:100%;
+		    position: fixed;
+		    bottom:500px">我有一只龙女仆！</div>
+	<div class="footer">
+		<a href="https://beian.miit.gov.cn" target="_blank">京ICP备2021034098号</a>lmaomaoz@live.com
+	</div>
+	<!--div class="resumes">
+		<a target="_blank" href="http://lmaomaoz.com/resume-md/">web版简历</a>
+		<a target="_blank" href="https://github.com/CheshireJCat/resume-md">github版简历</a>
+		<a target="_blank" href="http://lmaomaoz.com/resume-md/sources/cheshireCat.pdf">pdf版简历下载</a>
+		<br>
+		<a target="_blank" href="https://github.com/CheshireJCat"><svg aria-hidden="true" class="octicon" version="1.1" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>github</a>
+		<a href="mail:727559597@qq.com"><svg class="octicon" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g class="transform-group"><g transform="scale(0.1953125, 0.1953125)"><path d="M512 63.791885c-247.538793 0-448.208115 200.669322-448.208115 448.208115s200.669322 448.208115 448.208115 448.208115 448.208115-200.669322 448.208115-448.208115S759.538793 63.791885 512 63.791885zM774.58958 323.779198 512.332575 544.363082l-262.240633-220.583884L774.58958 323.779198zM248.078075 342.614172l175.202301 148.376329L248.078075 700.015118 248.078075 342.614172zM268.360004 700.220802l167.104879-197.293435 76.81141 63.081711 76.95058-65.046459 167.096692 199.258183L268.360004 700.220802zM775.921925 700.015118 600.727811 490.9905l175.194114-148.376329L775.921925 700.015118z" fill="#272636"></path></g></g></svg>727559597@qq.com</a>
+<br>
+	<a href="http://lmaomaoz.com/music/" target="_blank">html5 音乐播放器</a>
+	<a href="http://lmaomaoz.com/lab/css3/animatevideo/" target="_blank">纯css3视频</a>
+	<a href="http://lmaomaoz.com/lab/canvas/mmd2/index.html" target="_blank">threejs-MMD-loader</a>
+	</div-->
+	<!--div class="resumes">
+	    <a href="http://nekos.top/daka/" target="_blank">自用的打卡记录器</a>
+	    <a href="http://lmaomaoz.com/LuckDraw/" target="_blank">js实现的滚动抽奖插件</a>
+	    <a href="http://lmaomaoz.com/ff14xrwc/" target="_blank">ff14-仙人微彩小游戏计算器</a>
+	    <a href="http://lmaomaoz.com/nextmusic/" target="_blank">唱吧随机播</a>
+	    <a href="http://lmaomaoz.com/lab/css3/animatevideo/" target="_blank">纯css3视频</a>
+	</div-->
+	<script type="text/javascript">
+	(function(){
+		function gc(){
+			return '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).substr(-6);
+		}
+		var data = [['首页','/','#ddd'],['音乐','/music','#ffcdd2'],['博客','/blog','#0eb3af'],['实验室','/lab','#40c4ff'],['code','/code','#ee6e73'],['相册','/album','#bfafa0']];
+		var max = 12;
+		if(data.length<max){data = data.concat(data);}
+		var mode = '<li style="background:{{background}};transform:rotate({{rotate}}deg)" data-index={{index}}><a href="{{href}}">{{word}}</a></li>',
+			count = data.length,
+			angle = 360/count,
+			navs = document.getElementById('navs');
+			navs.innerHTML = data.concat().map(function(x,i) {
+				return mode.replace(/{{href}}/g,x[1])
+						   .replace(/{{word}}/g,x[0])
+						   .replace(/{{background}}/g,x[2])
+						   .replace(/{{rotate}}/g,angle*i)
+						   .replace(/{{index}}/g,i);
+			}).join('');
+		var t = new Date();
+		var nowData = 0;
+		var nowAngle = 0;
+		function scrollFun(event){	
+			var t2 = new Date();
+			if(t2-t<600){
+				return false;
+			}else{
+				t = t2;
+			}
+			var e = event||window.event;
+			var delta = arguments.length>0?(e.wheelDelta||-e.detail):1;
+			var d = delta>0?1:-1;
+			//var nowAngle = navs.style.transform.match(/rotate\((-?\d+)deg\)/);
+			//nowAngle = nowAngle==null?0:nowAngle[1]*1;
+			//nowAngle += angle*d;
+			nowData += -d;
+			nowData = nowData>max-1?nowData%max:nowData<0?nowData+max:nowData;
+			nowAngle += angle*d;
+			navs.style.transform = 'rotate('+nowAngle+'deg)';
+			document.getElementsByTagName('body')[0].style.background = data[nowData][2];
+		}
+		var it = setInterval(scrollFun,2000);
+		navs.onmouseenter = function(){
+			//navs.classList.remove('rotate');
+			clearInterval(it);
+		};
+		navs.onmouseleave = function(){
+			//navs.classList.add('rotate');
+			it = setInterval(scrollFun,2000);
+		};
+		if(document.addEventListener){
+		    document.addEventListener('DOMMouseScroll',scrollFun,false);
+		}//W3C
+		window.onmousewheel=document.onmousewheel=scrollFun;//IE/Opera/Chrome
+	})();
+	</script>
+</body>
+</html>
